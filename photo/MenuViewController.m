@@ -54,7 +54,6 @@
     selectPicButton.frame = CGRectMake((self.view.bounds.size.width - 150.0f) / 2.0f, 150.0f, 150.0f, 30.0f);
     [self.view addSubview:selectPicButton];
     self.selectPicButton = selectPicButton;
-    
 }
 
 - (void)viewDidLoad

@@ -11,8 +11,8 @@
 
 const NSInteger MaxValueForBlackColor = 55;
 const NSInteger MaxValueForRGBColors = 200;
-const NSInteger GrayColorDelta = 24;
-const NSInteger OrangeColorDelta = 90;
+const NSInteger GrayColorDelta = 22;
+const NSInteger OrangeColorDelta = 80;
 
 enum MazaikaPossableColors {
     MazaikaPossableColorsWhite = 0,
@@ -60,11 +60,14 @@ enum MazaikaPossableColors {
             UInt8 green = data[idx + 2];
             UInt8 blue = data[idx + 3];
                         
-            NSInteger sred = red + green + blue / 3;
+            NSInteger sred = red / 3 + green / 3 + blue / 3;
             
             enum MazaikaPossableColors color = MazaikaPossableColorsWhite;
             if (red < MaxValueForBlackColor && green < MaxValueForBlackColor && blue < MaxValueForBlackColor) {
                 color = MazaikaPossableColorsBlack;
+            }
+            else if (red > MaxValueForRGBColors && blue > MaxValueForRGBColors && green > MaxValueForRGBColors) {
+                color = MazaikaPossableColorsWhite;
             }
             else if (abs(sred - green) < GrayColorDelta && abs(sred - blue) < GrayColorDelta && abs(sred - red) < GrayColorDelta ) {
                 color = MazaikaPossableColorsGray;
@@ -72,13 +75,13 @@ enum MazaikaPossableColors {
             else if (blue < MaxValueForBlackColor && red - green > 0 && red - green < OrangeColorDelta ) {
                 color = MazaikaPossableColorsOrange;
             }
-            else if (red > green && red > blue && red < MaxValueForRGBColors) {
+            else if (red > green && red > blue) {
                 color = MazaikaPossableColorsRed;
             }
-            else if (green > red && green > blue && green < MaxValueForRGBColors) {
+            else if (green > blue) {
                 color = MazaikaPossableColorsGreen;
             }
-            else if (blue > red && blue > green && blue < MaxValueForRGBColors) {
+            else {
                 color = MazaikaPossableColorsBlue;
             }
             
