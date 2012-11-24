@@ -10,7 +10,8 @@
 #import "MazaikaViewController.h"
 
 @interface MenuViewController ()
-@property (weak, nonatomic) UIButton *makeMazaikaButton;
+@property (weak, nonatomic) UIButton *makePicButton;
+@property (weak, nonatomic) UIButton *selectPicButton;
 @property (weak, nonatomic) UITextField *searchTerm;
 @property (weak, nonatomic) UITextField *smallImageCount;
 @property (weak, nonatomic) UITextField *numPixels;
@@ -40,12 +41,19 @@
     [self.view addSubview:numPixels];
     self.numPixels = numPixels;
     
-    UIButton *makeMazaikaButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [makeMazaikaButton setTitle:@"Make" forState:UIControlStateNormal];
-    [makeMazaikaButton addTarget:self action:@selector(makeMazaikaButtonHendler:) forControlEvents:UIControlEventTouchUpInside];
-    makeMazaikaButton.frame = CGRectMake((self.view.bounds.size.width - 150.0f) / 2.0f, 115.0f, 150.0f, 30.0f);
-    [self.view addSubview:makeMazaikaButton];
-    self.makeMazaikaButton = makeMazaikaButton;
+    UIButton *makePicButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [makePicButton setTitle:@"Make photo" forState:UIControlStateNormal];
+    [makePicButton addTarget:self action:@selector(makeMazaikaButtonHendler:) forControlEvents:UIControlEventTouchUpInside];
+    makePicButton.frame = CGRectMake((self.view.bounds.size.width - 150.0f) / 2.0f, 115.0f, 150.0f, 30.0f);
+    [self.view addSubview:makePicButton];
+    self.makePicButton = makePicButton;
+    
+    UIButton *selectPicButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [selectPicButton setTitle:@"Select photo" forState:UIControlStateNormal];
+    [selectPicButton addTarget:self action:@selector(makeMazaikaButtonHendler:) forControlEvents:UIControlEventTouchUpInside];
+    selectPicButton.frame = CGRectMake((self.view.bounds.size.width - 150.0f) / 2.0f, 150.0f, 150.0f, 30.0f);
+    [self.view addSubview:selectPicButton];
+    self.selectPicButton = selectPicButton;
     
 }
 
@@ -56,9 +64,33 @@
 
 - (void)makeMazaikaButtonHendler:(UIButton*)button
 {
+    if (self.numPixels.text.integerValue < 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"Column and rows count should be greater then 1"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    if (self.smallImageCount.text.integerValue < 7) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"Small image count should be greater then 6"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+        
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    if (button == self.makePicButton) {
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else if (button == self.selectPicButton) {
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
     [self presentViewController:picker animated:YES completion:NULL];
 }
 

@@ -118,6 +118,7 @@
             [self.contaner addSubview:imageView];
         }
     }
+    ((UIScrollView*)(self.view)).zoomScale = ((UIScrollView*)(self.view)).minimumZoomScale;
 }
 
 @end
