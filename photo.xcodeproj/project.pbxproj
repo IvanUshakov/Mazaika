@@ -16,6 +16,11 @@
 		2A09E4D51660A106007D715C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A09E4D41660A106007D715C /* Default.png */; };
 		2A09E4D71660A106007D715C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A09E4D61660A106007D715C /* Default@2x.png */; };
 		2A09E4D91660A106007D715C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A09E4D81660A106007D715C /* Default-568h@2x.png */; };
+		2A09E4E11660A134007D715C /* MazaikaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A09E4E01660A134007D715C /* MazaikaViewController.m */; };
+		2A09E4E41660A3D4007D715C /* MazaikaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A09E4E31660A3D4007D715C /* MazaikaModel.m */; };
+		2A09E4EB1660A4DC007D715C /* UIImage+mazaika.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A09E4EA1660A4DC007D715C /* UIImage+mazaika.m */; };
+		2A4052631660B2AB00DD379F /* NetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A40525D1660A97600DD379F /* NetworkModel.m */; };
+		2A4052661660B43D00DD379F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4052651660B43D00DD379F /* MenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,16 @@
 		2A09E4D41660A106007D715C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2A09E4D61660A106007D715C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2A09E4D81660A106007D715C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2A09E4DF1660A134007D715C /* MazaikaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazaikaViewController.h; sourceTree = "<group>"; };
+		2A09E4E01660A134007D715C /* MazaikaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MazaikaViewController.m; sourceTree = "<group>"; };
+		2A09E4E21660A3D4007D715C /* MazaikaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MazaikaModel.h; sourceTree = "<group>"; };
+		2A09E4E31660A3D4007D715C /* MazaikaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MazaikaModel.m; sourceTree = "<group>"; };
+		2A09E4E91660A4DC007D715C /* UIImage+mazaika.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+mazaika.h"; sourceTree = "<group>"; };
+		2A09E4EA1660A4DC007D715C /* UIImage+mazaika.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+mazaika.m"; sourceTree = "<group>"; };
+		2A40525C1660A97600DD379F /* NetworkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkModel.h; sourceTree = "<group>"; };
+		2A40525D1660A97600DD379F /* NetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkModel.m; sourceTree = "<group>"; };
+		2A4052641660B43D00DD379F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		2A4052651660B43D00DD379F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +96,9 @@
 				2A09E4D11660A106007D715C /* AppDelegate.h */,
 				2A09E4D21660A106007D715C /* AppDelegate.m */,
 				2A09E4C91660A106007D715C /* Supporting Files */,
+				2A4052601660ABCE00DD379F /* ViewControllers */,
+				2A4052611660ABDC00DD379F /* Models */,
+				2A4052621660ABE600DD379F /* Categories */,
 			);
 			path = photo;
 			sourceTree = "<group>";
@@ -97,6 +115,37 @@
 				2A09E4D81660A106007D715C /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2A4052601660ABCE00DD379F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A09E4DF1660A134007D715C /* MazaikaViewController.h */,
+				2A09E4E01660A134007D715C /* MazaikaViewController.m */,
+				2A4052641660B43D00DD379F /* MenuViewController.h */,
+				2A4052651660B43D00DD379F /* MenuViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2A4052611660ABDC00DD379F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A40525C1660A97600DD379F /* NetworkModel.h */,
+				2A40525D1660A97600DD379F /* NetworkModel.m */,
+				2A09E4E21660A3D4007D715C /* MazaikaModel.h */,
+				2A09E4E31660A3D4007D715C /* MazaikaModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2A4052621660ABE600DD379F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2A09E4E91660A4DC007D715C /* UIImage+mazaika.h */,
+				2A09E4EA1660A4DC007D715C /* UIImage+mazaika.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +215,11 @@
 			files = (
 				2A09E4CF1660A106007D715C /* main.m in Sources */,
 				2A09E4D31660A106007D715C /* AppDelegate.m in Sources */,
+				2A09E4E11660A134007D715C /* MazaikaViewController.m in Sources */,
+				2A09E4E41660A3D4007D715C /* MazaikaModel.m in Sources */,
+				2A09E4EB1660A4DC007D715C /* UIImage+mazaika.m in Sources */,
+				2A4052631660B2AB00DD379F /* NetworkModel.m in Sources */,
+				2A4052661660B43D00DD379F /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +327,7 @@
 				2A09E4DE1660A106007D715C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
